@@ -88,8 +88,13 @@ Public URL: https://churn-risk-advisor-e8ds2ixxhfcgmfzpsbqih2.streamlit.app/
 
 Check your understanding
 Why does get_dummies(drop_first=True) break predictions for a single customer? With one row each text column has only one category, which is treated as the first and dropped. Every encoded column becomes 0, so the model sees the baseline customer (for example month-to-month) instead of the real one, and no error is raised.
+
 What does the parity test compare, and why every row? It compares the probabilities from the training-time features with those from the serving encoder for the same customers. It must cover every row because a mismatch can sit in a rare category combination that a small sample would never contain.
+
 st.cache_resource or st.cache_data for the model? st.cache_resource. A model is one shared object that should be loaded once per server and reused; st.cache_data is for data and makes a copy on every call.
+
 Why does the app derive TotalCharges? TotalCharges is roughly tenure times monthly charges, so asking for it separately lets a user type a value that contradicts the other two. Deriving it keeps the input consistent with the kind of data the model was trained on.
+
 Why pin the exact library version? A saved model stores the internal structure of the library version that created it. A different version on the server may fail to load it or load it and give different predictions. For this project that applies to xgboost as well as scikit-learn.
+
 Would a two-year contract make the customer stay? Not necessarily. The drop from 0.79 to 0.27 is an association in past data: people who signed two-year contracts were different from those who did not. A company could find out with a randomized trial, offering the contract to a random half of high-risk customers and comparing churn with the other half.
