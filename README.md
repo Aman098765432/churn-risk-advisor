@@ -98,3 +98,7 @@ Why does the app derive TotalCharges? TotalCharges is roughly tenure times month
 Why pin the exact library version? A saved model stores the internal structure of the library version that created it. A different version on the server may fail to load it or load it and give different predictions. For this project that applies to xgboost as well as scikit-learn.
 
 Would a two-year contract make the customer stay? Not necessarily. The drop from 0.79 to 0.27 is an association in past data: people who signed two-year contracts were different from those who did not. A company could find out with a randomized trial, offering the contract to a random half of high-risk customers and comparing churn with the other half.
+previous work
+aman-riaz-week-1.ipynb
+aman-riaz-week-2-lab-project.ipynb
+aman-riaz-week-3-model-optimization.ipynb
