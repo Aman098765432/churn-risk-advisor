@@ -76,10 +76,6 @@ From the what-if table, TODO (which change) lowered risk the most, from TODO to 
 
 Part 2: testing the app
 
-TODO one behavior of the app that surprised you.
-
-TODO one input a real user might enter that the app still handles badly.
-
 Part 3: deployment
 
 Public URL: https://churn-risk-advisor-e8ds2ixxhfcgmfzpsbqih2.streamlit.app/
